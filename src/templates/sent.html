@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Messaging Platform</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">Messaging Platform</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="/dashboard">Home</a></li>
+                <li><a href="/inbox">Inbox</a></li>
+                <li class="active"><a href="/sent">SENT</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+        </nav>
+        <div class="container col-md-12">
+            <div class="row">
+                <div class="col col-md-4"></div>
+                <div class="col col-md-6">
+                    <h2 style="color:red">Welcome to our Sent Page</h2>
+                </div>
+            </div> <br/>
+            <div class="row">
+                <div class="container col-md-2"></div>
+                <div class="container container-fluid col-md-8">
+                    <table class="table">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Friends Wallet Address</th>
+                            <th>Message</th>
+                        </tr>
+                        {%for i in range(l)%}
+                            <tr>
+                                <td>{{i+1}}</td>
+                                <td>{{data[i][0]}}</td>
+                                <td>{{data[i][1]}}</td>
+                            </tr>
+                        {%endfor%}
+                    </table>
+                    <span style="color:blue">{{response}}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

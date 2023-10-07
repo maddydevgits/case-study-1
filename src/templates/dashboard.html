@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Messaging Platform</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">Messaging Platform</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/dashboard">Home</a></li>
+                <li><a href="/inbox">Inbox</a></li>
+                <li><a href="/sent">SENT</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+        </nav>
+        <div class="container col-md-12">
+            <div class="row">
+                <div class="col col-md-4"></div>
+                <div class="col col-md-6">
+                    <h2 style="color:red">Welcome to our Dashboard Page</h2>
+                </div>
+            </div> <br/>
+            <div class="row">
+                <div class="container col-md-4"></div>
+                <div class="container container-fluid col-md-4">
+                    <form action="/composeform" method="post">
+                        <div class="form-group">
+                            <label>Enter Message: </label>
+                            <textarea cols="100" rows="5" class="form-control" name="message"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter your friends Wallet Address: </label>
+                            <input type="text" class="form-control" name="walletaddr" />
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </form>
+                    <span style="color:blue">{{response}}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
